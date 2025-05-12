@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snow Man チケット情報共有サイト</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fa-solid fa-snowflake"></i> Snow Man チケット情報共有サイト</h1>
+      <nav>
+        <ul>
+          <li><a href="#tips">チケット獲得Tips</a></li>
+          <li><a href="#seating">座席配置</a></li>
+          <li><a href="#past-concerts">過去のコンサート</a></li>
+          <li><a href="#share">情報共有</a></li>
+          <li><a href="toku.html">徳の積み方</a></li>
+          <li><a href="shrine.html">神社のおすすめ</a></li>
+          <li><a href="compatibility.html">相性占い</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Snow Man ファンのためのチケット情報共有プラットフォーム</h2>
+        <p>ファン同士でチケット獲得のコツを共有し、より良いコンサート体験を実現しましょう</p>
+      </div>
+    </section>
+
+    <section id="tips" class="tips-section">
+      <div class="container">
+        <h2>チケット獲得 Tips</h2>
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="high">優先度高</button>
+          <button class="filter-btn" data-filter="medium">優先度中</button>
+          <button class="filter-btn" data-filter="low">優先度低</button>
+          <button id="x-fetch-btn" class="x-fetch-btn"><i class="fa-brands fa-x-twitter"></i> Xから更新</button>
+        </div>
+        <div class="tips-container">
+          <!-- Tips will be loaded here via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="seating" class="seating-section">
+      <div class="container">
+        <h2>座席配置予想</h2>
+        <div class="venue-selector">
+          <label for="venue-select">会場を選択:</label>
+          <select id="venue-select">
+            <option value="tokyo-dome">東京ドーム</option>
+            <option value="yokohama-arena">横浜アリーナ</option>
+            <option value="saitama-super-arena">さいたまスーパーアリーナ</option>
+          </select>
+        </div>
+        <div class="seating-map-container">
+          <div id="seating-map" class="seating-map">
+            <!-- Seating map will be displayed here -->
+          </div>
+          <div class="seating-info">
+            <h3>ベストスポット予想</h3>
+            <ul id="best-spots">
+              <!-- Best spots will be loaded here -->
+            </ul>
+            <h3>ステージ構成メモ</h3>
+            <p id="stage-notes">会場を選択するとステージ構成の詳細が表示されます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="past-concerts" class="past-concerts-section">
+      <div class="container">
+        <h2>過去のコンサート情報</h2>
+        <div class="past-concerts-container">
+          <!-- Past concert data will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="share" class="share-section">
+      <div class="container">
+        <h2>情報を共有する</h2>
+        <form id="share-form">
+          <div class="form-group">
+            <label for="tip-type">情報タイプ</label>
+            <select id="tip-type" required>
+              <option value="">選択してください</option>
+              <option value="ticket">チケット獲得のコツ</option>
+              <option value="venue">会場・座席情報</option>
+              <option value="experience">過去の体験談</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tip-title">タイトル</label>
+            <input type="text" id="tip-title" required placeholder="チケット獲得のコツのタイトル">
+          </div>
+          <div class="form-group">
+            <label for="priority">優先度</label>
+            <select id="priority" required>
+              <option value="">選択してください</option>
+              <option value="high">高（必須情報）</option>
+              <option value="medium">中（役立つ情報）</option>
+              <option value="low">低（参考情報）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="source">情報源</label>
+            <input type="text" id="source" placeholder="Twitter/X のURL、または情報源">
+          </div>
+          <div class="form-group">
+            <label for="content">内容</label>
+            <textarea id="content" rows="5" required placeholder="情報の詳細を記入してください"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="username">ユーザー名（任意）</label>
+            <input type="text" id="username" placeholder="匿名で投稿する場合は空欄">
+          </div>
+          <div class="form-action-buttons">
+            <button type="submit" class="submit-btn">投稿する</button>
+            <button type="button" id="preview-btn" class="preview-btn">プレビュー</button> 
+          </div>
+        </form>
+
+        <div id="preview-container" class="preview-container" style="display: none;">
+          <h3>プレビュー</h3>
+          <div id="tip-preview" class="tip-card"></div>
+          <button id="close-preview-btn" class="close-btn">閉じる</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Snow Man チケット情報共有サイト - ファンによるファンのためのサイト</p>
+      <p><small>*このサイトはSnow Manの公式サイトではありません。ファンによる非公式のコミュニティサイトです。</small></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

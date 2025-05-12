@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メンバーとの相性占い | Snow Man チケット情報共有サイト</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fa-solid fa-snowflake"></i> Snow Man チケット情報共有サイト</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html#tips">チケット獲得Tips</a></li>
+          <li><a href="index.html#seating">座席配置</a></li>
+          <li><a href="index.html#past-concerts">過去のコンサート</a></li>
+          <li><a href="index.html#share">情報共有</a></li>
+          <li><a href="toku.html">徳の積み方</a></li>
+          <li><a href="shrine.html">神社のおすすめ</a></li>
+          <li><a href="compatibility.html" class="active">相性占い</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero compatibility-hero">
+      <div class="container">
+        <h2>Snow Man メンバーとの相性占い</h2>
+        <p>あなたとメンバーの相性を楽しく占ってみましょう</p>
+      </div>
+    </section>
+
+    <section class="compatibility-section">
+      <div class="container">
+        <div class="compatibility-intro">
+          <h3>相性占いについて</h3>
+          <p>この占いは、あなたの誕生日や性格から、Snow Manのどのメンバーと相性が良いかを診断します。もちろん、ただの占いですので気楽に楽しんでくださいね。また、推しメンとの相性度もチェックできます！</p>
+          <p><small>※この占いはエンターテイメント目的であり、科学的根拠はありません。</small></p>
+        </div>
+
+        <div class="compatibility-form-container">
+          <form id="compatibility-form">
+            <div class="form-group">
+              <label for="user-name">あなたのニックネーム</label>
+              <input type="text" id="user-name" placeholder="ニックネームを入力（任意）">
+            </div>
+            
+            <div class="form-group">
+              <label for="birth-date">誕生日</label>
+              <input type="date" id="birth-date" required>
+            </div>
+            
+            <div class="form-group">
+              <label>血液型</label>
+              <div class="blood-type-options">
+                <label><input type="radio" name="blood-type" value="A"> A型</label>
+                <label><input type="radio" name="blood-type" value="B"> B型</label>
+                <label><input type="radio" name="blood-type" value="O"> O型</label>
+                <label><input type="radio" name="blood-type" value="AB"> AB型</label>
+                <label><input type="radio" name="blood-type" value="unknown"> わからない</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>性格タイプ（複数選択可）</label>
+              <div class="personality-options">
+                <label><input type="checkbox" name="personality" value="cheerful"> 明るい・陽気</label>
+                <label><input type="checkbox" name="personality" value="calm"> 落ち着いている・穏やか</label>
+                <label><input type="checkbox" name="personality" value="passionate"> 情熱的・熱心</label>
+                <label><input type="checkbox" name="personality" value="logical"> 論理的・冷静</label>
+                <label><input type="checkbox" name="personality" value="shy"> 恥ずかしがり・控えめ</label>
+                <label><input type="checkbox" name="personality" value="kind"> 優しい・思いやりがある</label>
+                <label><input type="checkbox" name="personality" value="funny"> おもしろい・ユーモアがある</label>
+                <label><input type="checkbox" name="personality" value="serious"> 真面目・責任感がある</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="favorite-color">好きな色</label>
+              <select id="favorite-color">
+                <option value="">選択してください</option>
+                <option value="red">赤</option>
+                <option value="blue">青</option>
+                <option value="green">緑</option>
+                <option value="yellow">黄</option>
+                <option value="purple">紫</option>
+                <option value="orange">オレンジ</option>
+                <option value="pink">ピンク</option>
+                <option value="white">白</option>
+                <option value="black">黒</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="current-oshi">現在の推しメンバー</label>
+              <select id="current-oshi">
+                <option value="">選択してください</option>
+                <option value="iwamoto">岩本 照</option>
+                <option value="fukazawa">深澤 辰哉</option>
+                <option value="sakuma">佐久間 大介</option>
+                <option value="watanabe">渡辺 翔太</option>
+                <option value="raul">ラウール</option>
+                <option value="mukai">向井 康二</option>
+                <option value="abe">阿部 亮平</option>
+                <option value="miyadate">宮舘 涼太</option>
+                <option value="meguro">目黒 蓮</option>
+                <option value="none">特になし／全員推し</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">相性を診断する</button>
+          </form>
+        </div>
+        
+        <div id="compatibility-result" class="compatibility-result">
+          <!-- 診断結果がここに表示されます -->
+        </div>
+        
+        <div class="member-profiles">
+          <h3>Snow Man メンバープロフィール</h3>
+          
+          <div class="member-cards">
+            <div class="member-card" data-member="iwamoto">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>岩本 照</span>
+              </div>
+              <div class="member-details">
+                <h4>岩本 照（いわもと ひかる）</h4>
+                <p><strong>生年月日:</strong> 1993年2月17日</p>
+                <p><strong>血液型:</strong> A型</p>
+                <p><strong>出身地:</strong> 東京都</p>
+                <p><strong>性格:</strong> 真面目、努力家、謙虚</p>
+                <p><strong>特技:</strong> スノーボード、ダンス</p>
+                <p><strong>相性の良いタイプ:</strong> 明るく素直な人、頑張る姿を見守ってくれる人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="fukazawa">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>深澤 辰哉</span>
+              </div>
+              <div class="member-details">
+                <h4>深澤 辰哉（ふかざわ たつや）</h4>
+                <p><strong>生年月日:</strong> 1992年5月5日</p>
+                <p><strong>血液型:</strong> B型</p>
+                <p><strong>出身地:</strong> 埼玉県</p>
+                <p><strong>性格:</strong> マイペース、天然、優しい</p>
+                <p><strong>特技:</strong> ダンス、料理</p>
+                <p><strong>相性の良いタイプ:</strong> おおらかな人、冗談が通じる人、天然さを理解してくれる人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="sakuma">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>佐久間 大介</span>
+              </div>
+              <div class="member-details">
+                <h4>佐久間 大介（さくま だいすけ）</h4>
+                <p><strong>生年月日:</strong> 1992年7月5日</p>
+                <p><strong>血液型:</strong> A型</p>
+                <p><strong>出身地:</strong> 東京都</p>
+                <p><strong>性格:</strong> 明るい、面白い、情熱的</p>
+                <p><strong>特技:</strong> ダンス、お笑い</p>
+                <p><strong>相性の良いタイプ:</strong> ポジティブな人、笑いのツボが合う人、エネルギッシュな人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="watanabe">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>渡辺 翔太</span>
+              </div>
+              <div class="member-details">
+                <h4>渡辺 翔太（わたなべ しょうた）</h4>
+                <p><strong>生年月日:</strong> 1992年11月5日</p>
+                <p><strong>血液型:</strong> A型</p>
+                <p><strong>出身地:</strong> 東京都</p>
+                <p><strong>性格:</strong> プライド高め、負けず嫌い、優しい</p>
+                <p><strong>特技:</strong> ボーカル、ダンス</p>
+                <p><strong>相性の良いタイプ:</strong> 素直な人、自分の意見をはっきり言える人、頼れる存在</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="raul">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>ラウール</span>
+              </div>
+              <div class="member-details">
+                <h4>ラウール</h4>
+                <p><strong>生年月日:</strong> 2003年6月27日</p>
+                <p><strong>血液型:</strong> O型</p>
+                <p><strong>出身地:</strong> 東京都</p>
+                <p><strong>性格:</strong> 明るい、ポジティブ、素直</p>
+                <p><strong>特技:</strong> 英語、スポーツ全般</p>
+                <p><strong>相性の良いタイプ:</strong> 面白い人、優しく見守ってくれる人、一緒に成長できる人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="mukai">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>向井 康二</span>
+              </div>
+              <div class="member-details">
+                <h4>向井 康二（むかい こうじ）</h4>
+                <p><strong>生年月日:</strong> 1994年6月21日</p>
+                <p><strong>血液型:</strong> AB型</p>
+                <p><strong>出身地:</strong> 大阪府</p>
+                <p><strong>性格:</strong> ムードメーカー、明るい、努力家</p>
+                <p><strong>特技:</strong> アクロバット、ダンス</p>
+                <p><strong>相性の良いタイプ:</strong> 笑顔が素敵な人、前向きな人、関西弁を理解してくれる人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="abe">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>阿部 亮平</span>
+              </div>
+              <div class="member-details">
+                <h4>阿部 亮平（あべ りょうへい）</h4>
+                <p><strong>生年月日:</strong> 1993年7月27日</p>
+                <p><strong>血液型:</strong> A型</p>
+                <p><strong>出身地:</strong> 千葉県</p>
+                <p><strong>性格:</strong> 真面目、優しい、繊細</p>
+                <p><strong>特技:</strong> 料理、パソコン</p>
+                <p><strong>相性の良いタイプ:</strong> 細かいところに気づける人、一緒に料理できる人、知的な会話ができる人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="miyadate">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>宮舘 涼太</span>
+              </div>
+              <div class="member-details">
+                <h4>宮舘 涼太（みやだて りょうた）</h4>
+                <p><strong>生年月日:</strong> 1993年3月25日</p>
+                <p><strong>血液型:</strong> O型</p>
+                <p><strong>出身地:</strong> 北海道</p>
+                <p><strong>性格:</strong> クール、繊細、几帳面</p>
+                <p><strong>特技:</strong> ダンス、書道</p>
+                <p><strong>相性の良いタイプ:</strong> 落ち着いた人、感情表現が豊かな人、共通の趣味がある人</p>
+              </div>
+            </div>
+            
+            <div class="member-card" data-member="meguro">
+              <div class="member-image-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>目黒 蓮</span>
+              </div>
+              <div class="member-details">
+                <h4>目黒 蓮（めぐろ れん）</h4>
+                <p><strong>生年月日:</strong> 1997年2月16日</p>
+                <p><strong>血液型:</strong> O型</p>
+                <p><strong>出身地:</strong> 神奈川県</p>
+                <p><strong>性格:</strong> 真面目、努力家、クール</p>
+                <p><strong>特技:</strong> ダンス、英語</p>
+                <p><strong>相性の良いタイプ:</strong> 思いやりのある人、自分のペースを理解してくれる人、応援してくれる人</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="compatibility-tips">
+          <h3>こんな人と相性抜群！メンバー別相性ポイント</h3>
+          
+          <div class="compatibility-tips-container">
+            <div class="tips-card">
+              <h4>岩本 照さんと相性が良いのは…</h4>
+              <ul>
+                <li>優しく見守ってあげられる人</li>
+                <li>努力を認めて褒めてあげられる人</li>
+                <li>スポーツや体を動かすことが好きな人</li>
+                <li>謙虚で素直な人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>深澤 辰哉さんと相性が良いのは…</h4>
+              <ul>
+                <li>マイペースな性格を理解できる人</li>
+                <li>ユーモアのセンスがある人</li>
+                <li>料理が好きな人</li>
+                <li>寛容で心が広い人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>佐久間 大介さんと相性が良いのは…</h4>
+              <ul>
+                <li>エネルギッシュで明るい人</li>
+                <li>お笑いが好きな人</li>
+                <li>好奇心旺盛な人</li>
+                <li>応援するのが好きな人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>渡辺 翔太さんと相性が良いのは…</h4>
+              <ul>
+                <li>しっかりした芯を持っている人</li>
+                <li>高いプライドを尊重できる人</li>
+                <li>音楽センスがある人</li>
+                <li>思ったことをはっきり伝えられる人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>ラウールさんと相性が良いのは…</h4>
+              <ul>
+                <li>若々しいエネルギーを持つ人</li>
+                <li>素直で正直な人</li>
+                <li>国際的な視野を持つ人</li>
+                <li>ポジティブシンキングな人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>向井 康二さんと相性が良いのは…</h4>
+              <ul>
+                <li>関西の文化が好きな人</li>
+                <li>ムードメーカーとなれる人</li>
+                <li>チャレンジ精神旺盛な人</li>
+                <li>面白いことが大好きな人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>阿部 亮平さんと相性が良いのは…</h4>
+              <ul>
+                <li>真面目で几帳面な人</li>
+                <li>料理が好きな人</li>
+                <li>知的好奇心が強い人</li>
+                <li>繊細な気持ちを理解できる人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>宮舘 涼太さんと相性が良いのは…</h4>
+              <ul>
+                <li>クールな性格を好む人</li>
+                <li>芸術的センスがある人</li>
+                <li>落ち着いた雰囲気を持つ人</li>
+                <li>北海道や雪が好きな人</li>
+              </ul>
+            </div>
+            
+            <div class="tips-card">
+              <h4>目黒 蓮さんと相性が良いのは…</h4>
+              <ul>
+                <li>努力家で真面目な人</li>
+                <li>クールな外見と優しい内面を理解できる人</li>
+                <li>語学や勉強が好きな人</li>
+                <li>サポート役が得意な人</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="share-results">
+          <h3>占い結果をSNSでシェアしよう！</h3>
+          <p>結果をシェアして、友達と相性を比べてみましょう。<br>（※実際のシェア機能は実装されていません）</p>
+          <div class="share-buttons">
+            <button class="share-btn twitter"><i class="fa-brands fa-twitter"></i> Twitter/X</button>
+            <button class="share-btn instagram"><i class="fa-brands fa-instagram"></i> Instagram</button>
+            <button class="share-btn line"><i class="fa-brands fa-line"></i> LINE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Snow Man チケット情報共有サイト - ファンによるファンのためのサイト</p>
+      <p><small>*このサイトはSnow Manの公式サイトではありません。ファンによる非公式のコミュニティサイトです。</small></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/compatibility.js"></script>
+</body>
+</html>
