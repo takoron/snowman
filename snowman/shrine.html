@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>神社のおすすめ | Snow Man チケット情報共有サイト</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fa-solid fa-snowflake"></i> Snow Man チケット情報共有サイト</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html#tips">チケット獲得Tips</a></li>
+          <li><a href="index.html#seating">座席配置</a></li>
+          <li><a href="index.html#past-concerts">過去のコンサート</a></li>
+          <li><a href="index.html#share">情報共有</a></li>
+          <li><a href="toku.html">徳の積み方</a></li>
+          <li><a href="shrine.html" class="active">神社のおすすめ</a></li>
+          <li><a href="compatibility.html">相性占い</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shrine-hero">
+      <div class="container">
+        <h2>あなたに合う神社のおすすめ</h2>
+        <p>チケットの当選祈願におすすめの神社を見つけましょう</p>
+      </div>
+    </section>
+
+    <section class="shrine-section">
+      <div class="container">
+        <div class="shrine-intro">
+          <h3>神社参拝でチケット運アップ</h3>
+          <p>日本には様々なご利益を持つ神社があります。特に「開運」「縁結び」「願望成就」などのご利益がある神社は、チケット当選を願うファンにも人気です。あなたの性格や誕生日などに合った神社を見つけ、参拝してみましょう。</p>
+          <p><small>※効果を保証するものではありません。参拝マナーを守って楽しく参拝しましょう。</small></p>
+        </div>
+
+        <div class="shrine-finder">
+          <h3>あなたにぴったりの神社診断</h3>
+          <form id="shrine-finder-form">
+            <div class="form-group">
+              <label for="birth-month">誕生月</label>
+              <select id="birth-month" required>
+                <option value="">選択してください</option>
+                <option value="1">1月</option>
+                <option value="2">2月</option>
+                <option value="3">3月</option>
+                <option value="4">4月</option>
+                <option value="5">5月</option>
+                <option value="6">6月</option>
+                <option value="7">7月</option>
+                <option value="8">8月</option>
+                <option value="9">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="personality-type">あなたの性格タイプ</label>
+              <select id="personality-type" required>
+                <option value="">選択してください</option>
+                <option value="active">活発・外向的</option>
+                <option value="calm">穏やか・内向的</option>
+                <option value="logical">論理的・計画的</option>
+                <option value="creative">創造的・直感的</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>願いの強さ（チケットをどれくらい熱望していますか？）</label>
+              <div class="wish-strength">
+                <input type="range" id="wish-strength" min="1" max="5" step="1" value="3">
+                <div class="range-labels">
+                  <span>弱</span>
+                  <span>普通</span>
+                  <span>強</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="oshi-member">推しメンバー</label>
+              <select id="oshi-member">
+                <option value="">選択してください</option>
+                <option value="iwamoto">岩本 照</option>
+                <option value="hikaru">深澤 辰哉</option>
+                <option value="sakuma">佐久間 大介</option>
+                <option value="koji">渡辺 翔太</option>
+                <option value="raul">ラウール</option>
+                <option value="daisuke">向井 康二</option>
+                <option value="tatsuya">阿部 亮平</option>
+                <option value="shouta">宮舘 涼太</option>
+                <option value="ryohei">目黒 蓮</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">神社を診断する</button>
+          </form>
+          
+          <div id="shrine-result" class="shrine-result">
+            <!-- 診断結果がここに表示されます -->
+          </div>
+        </div>
+
+        <div class="shrine-list-section">
+          <h3>人気の開運神社一覧</h3>
+          <div class="shrine-list">
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/13/12/18/japan-1977031_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>明治神宮</h4>
+                <p><strong>所在地:</strong> 東京都渋谷区代々木神園町1-1</p>
+                <p><strong>ご利益:</strong> 開運、縁結び、厄除け、願望成就</p>
+                <p><strong>特徴:</strong> 都心にありながら広大な森に囲まれた神社。特に芸能関係の願いが叶うと言われています。</p>
+                <p><strong>ファンの声:</strong> 「コンサート前に参拝したら、最前列センター席が取れました！」</p>
+              </div>
+            </div>
+            
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2014/10/07/13/48/kyoto-477729_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>伏見稲荷大社</h4>
+                <p><strong>所在地:</strong> 京都府京都市伏見区深草藪之内町68</p>
+                <p><strong>ご利益:</strong> 商売繁盛、願望成就、家内安全</p>
+                <p><strong>特徴:</strong> 千本鳥居が有名で、強い願いを持って参拝すると叶うと言われています。</p>
+                <p><strong>ファンの声:</strong> 「京都旅行中に参拝したら、翌週の抽選に見事当選しました！」</p>
+              </div>
+            </div>
+            
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2015/07/05/13/44/payphone-832383_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>箱根神社</h4>
+                <p><strong>所在地:</strong> 神奈川県足柄下郡箱根町元箱根80-1</p>
+                <p><strong>ご利益:</strong> 恋愛成就、平和安全、交通安全</p>
+                <p><strong>特徴:</strong> 芦ノ湖のほとりにある神社で、パワースポットとしても人気。</p>
+                <p><strong>ファンの声:</strong> 「箱根旅行のついでに参拝したら、連続落選していた私が初めて当選しました！」</p>
+              </div>
+            </div>
+            
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2015/02/16/15/23/kiyomizu-dera-638464_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>日枝神社</h4>
+                <p><strong>所在地:</strong> 東京都千代田区永田町2-10-5</p>
+                <p><strong>ご利益:</strong> 必勝祈願、開運、良縁</p>
+                <p><strong>特徴:</strong> 山王さまとして親しまれ、特に「勝負運」に強い神社と言われています。</p>
+                <p><strong>ファンの声:</strong> 「チケット申し込み前日に参拝し、合格したいと強く願ったら当選しました！」</p>
+              </div>
+            </div>
+            
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/12/29/08/40/japan-3046582_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>北海道神宮</h4>
+                <p><strong>所在地:</strong> 北海道札幌市中央区宮ヶ丘474</p>
+                <p><strong>ご利益:</strong> 開拓魂、願望成就、厄除け</p>
+                <p><strong>特徴:</strong> 広大な敷地を持ち、特に北国の守り神として有名。</p>
+                <p><strong>ファンの声:</strong> 「Snow Manにちなんで雪の期間に参拝したら、翌日チケット当選の知らせが！」</p>
+              </div>
+            </div>
+            
+            <div class="shrine-card">
+              <div class="shrine-card-image" style="background-image: url('https://cdn.pixabay.com/photo/2014/01/05/01/19/daruma-238451_1280.jpg')"></div>
+              <div class="shrine-card-content">
+                <h4>湯島天神</h4>
+                <p><strong>所在地:</strong> 東京都文京区湯島3-30-1</p>
+                <p><strong>ご利益:</strong> 学問成就、芸能上達、縁結び</p>
+                <p><strong>特徴:</strong> 学問の神様として有名ですが、芸能関係の願いも叶うと言われています。</p>
+                <p><strong>ファンの声:</strong> 「受験の合格祈願と一緒にチケット当選もお願いしたら、両方叶いました！」</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="shrine-tips">
+          <h3>神社参拝のポイント</h3>
+          <div class="tips-container">
+            <div class="tip-item">
+              <i class="fa-solid fa-hand-sparkles"></i>
+              <h4>手水舎での作法</h4>
+              <p>右手→左手→口（水を含むだけ）→左手で柄を洗う、の順番で清めます。</p>
+            </div>
+            
+            <div class="tip-item">
+              <i class="fa-solid fa-coins"></i>
+              <h4>お賽銭の金額</h4>
+              <p>5円（ご縁）や9円（クイック当選の語呂合わせ）がおすすめです。</p>
+            </div>
+            
+            <div class="tip-item">
+              <i class="fa-solid fa-hands-praying"></i>
+              <h4>参拝の作法</h4>
+              <p>「二礼二拍手一礼」が基本です。静かに願いを唱えましょう。</p>
+            </div>
+            
+            <div class="tip-item">
+              <i class="fa-solid fa-calendar-days"></i>
+              <h4>参拝のタイミング</h4>
+              <p>チケット申込前日や、毎月1日・15日がおすすめです。</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="shrine-share">
+          <h3>あなたの参拝体験を共有しよう</h3>
+          <p>実際に参拝して良い結果が出た神社の情報を共有してください！</p>
+          <button id="share-shrine-btn" class="submit-btn">体験を共有する</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Snow Man チケット情報共有サイト - ファンによるファンのためのサイト</p>
+      <p><small>*このサイトはSnow Manの公式サイトではありません。ファンによる非公式のコミュニティサイトです。</small></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shrine.js"></script>
+</body>
+</html>
